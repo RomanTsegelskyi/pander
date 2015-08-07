@@ -2079,6 +2079,7 @@ pander.orm <- function (x, coefs = TRUE, intercepts = x$non.slopes < 10, ...) {
 #' @param x an Grm object
 #' @param coefs if to the table of model coefficients, standard errors, etc. default(\code{TRUE})
 #' @param ... optional parameters passed to raw \code{pandoc.table} function
+#' @rdname pander.glm.rms
 #' @export
 pander.Glm <- function (x, coefs = TRUE, ...) {
     requireNamespace('rms', quietly = TRUE)
