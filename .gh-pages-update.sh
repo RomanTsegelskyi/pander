@@ -19,13 +19,11 @@ git config user.email "travis"
 
 # something to brew everything
 # check difference and commit
-for files in '../pander/inst/doc/*.html'; do
+for files in 'inst/doc/*.html'; do
         cp $files .
 done
 
 R -f .brewer.R
-
-cd out
 
 git add .
 git commit -m "GH-Pages update by travis"
