@@ -6,8 +6,9 @@ rm -rf pander
 rm -rf pander-master
 mkdir out;
 
+git config user.name "Roman Tsegelskyi"
+git config user.email "roman.tsegelskyi@gmail.com"
 GH_REPO="@github.com/RomanTsegelskyi/pander.git"
-GH_TOKEN="f78038b5c22dd8df5bdaf8934ca18ad2e4eac073"
 FULL_REPO="https://$GH_TOKEN$GH_REPO"
 
 for files in '*.tar.gz'; do
