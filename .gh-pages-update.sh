@@ -15,7 +15,8 @@ for files in '*.tar.gz'; do
        tar xfz $files
 done
 
-mv pander-master pander
+ls
+echo pwd
 cp .brewer.R out/.brewer.R
 cd out
 git init
