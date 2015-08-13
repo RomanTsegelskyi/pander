@@ -1,5 +1,6 @@
 language: r
 env:
+  matrix:
   - LINTR_COMMENT_BOT=true
   global:
     secure: IGjuf04BkEr6fYG3/M75zdE7/IbYOyi0yVpsPLMpBzJQHHBtv7Qn02tRTLj4HSGVs5ZNZAib8xHMuP+qoIskh3JTQLBDLqVjEDQAjTIYoSYzw0AeVLA+S8NgncS+acmgzosGhsOUuKCx53AJBo9J8Zn1MpFWtU7acfKVTNTxfEI=
