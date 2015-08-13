@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Unified plots" />
+  <title>Gergely Daróczi</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="http://cdn.rapporter.net/pander/stylesheets/base.css" />
+<link rel="stylesheet" href="http://cdn.rapporter.net/pander/stylesheets/skeleton.css" />
+<link rel="stylesheet" href="http://cdn.rapporter.net/pander/stylesheets/layout.css" />
+<link rel="stylesheet" href="http://cdn.rapporter.net/pander/stylesheets/slimbox2.css" />
+<link rel="stylesheet" href="http://cdn.rapporter.net/pander/stylesheets/custom.css" />
+<link rel="stylesheet" href="http://cdn.rapporter.net/pander/stylesheets/caption.css"/>
+
+<link rel="shortcut icon" href="http://cdn.rapporter.net/pander/images/favicon.gif" />
+<link rel="apple-touch-icon" href="http://cdn.rapporter.net/pander/images/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://cdn.rapporter.net/pander/images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://cdn.rapporter.net/pander/images/apple-touch-icon-114x114.png" />
+
+<script type="text/javascript" src="http://cdn.rapporter.net/pander/javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://cdn.rapporter.net/pander/javascripts/custom.js"></script>
+<script type="text/javascript" src="http://cdn.rapporter.net/pander/javascripts/slimbox2.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script type="text/javascript" src="http://cdn.rapporter.net/mathjax/2.1/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="http://cdn.rapporter.net/pander/javascripts/jcaption.min.js" /></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Gergely Daróczi</h1>
+<h2 class="author">Unified plots</h2>
+</div>
+<p>This document demonstrates the features of unifying plots in <code>pander</code>. First, if you do not want to deal with styling each of your images, just activate it: <code>evalsOptions('graph.unify', TRUE)</code>.</p>
+<p><em>Note</em>: please install <code>lattice</code> and <code>ggplot2</code> on your computer prior to trying to run all examples of this document.</p>
+<h1 id="options">Options</h1>
+<p>There are a bunch of options you might want to check out, these are:</p>
+<ul>
+<li>graph.nomargin</li>
+<li>graph.fontfamily</li>
+<li>graph.fontcolor</li>
+<li>graph.fontsize</li>
+<li>graph.grid</li>
+<li>graph.grid.minor</li>
+<li>graph.grid.color</li>
+<li>graph.grid.lty</li>
+<li>graph.boxes</li>
+<li>graph.legend.position</li>
+<li>graph.background</li>
+<li>graph.panel.background</li>
+<li>graph.colors</li>
+<li>graph.color.rnd</li>
+<li>graph.axis.angle</li>
+<li>graph.symbol</li>
+</ul>
+<!-- end of list -->
+<p>Find more details on <a href="http://rapporter.github.com/pander/#pander-options"><code>pander</code>'s homepage</a>.</p>
+<h1 id="default-options">Default options</h1>
+<p>Not touching the above ones, let us check out how different plots look like by calling <code>base</code> R graphing function, <code>lattice</code> or <code>ggplot2</code>!</p>
+<h2 id="histogram">Histogram</h2>
+<h3 id="base-r-plot">Base R plot</h3>
+<p><img src="data:image/png;base64," alt /> <strong>WARNING</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<h3 id="lattice">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="barplot">Barplot</h2>
+<h3 id="base-r-plot-1">Base R plot</h3>
+<p><img src="data:image/png;base64," alt /> <strong>WARNING</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<h3 id="lattice-1">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-1">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="points">Points</h2>
+<h3 id="base-r-plot-2">Base R plot</h3>
+<p><img src="data:image/png;base64," alt /> <strong>WARNING</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<h3 id="lattice-2">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-2">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="grouped-plot">Grouped plot</h2>
+<h3 id="base-r-plot-3">Base R plot</h3>
+<p>I have no idea how to do that besides manually adding <code>points</code>.</p>
+<h3 id="lattice-3">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-3">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="facets">Facets</h2>
+<h3 id="base-r-plot-4">Base R plot</h3>
+<p>I have no idea how to do that besides <code>par(mfrow=c(foo, bar))</code>.</p>
+<h3 id="lattice-4">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-4">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="boxplot">Boxplot</h2>
+<h3 id="base-r-plot-5">Base R plot</h3>
+<p><img src="data:image/png;base64," alt /> <strong>WARNING</strong><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<h3 id="lattice-5">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-5">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="lines">Lines</h2>
+<h3 id="base-r-plot-6">Base R plot</h3>
+<p><img src="data:image/png;base64," alt /> <strong>WARNING</strong><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<h3 id="lattice-6">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-6">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h1 id="custom-options">Custom options</h1>
+<p>Below you can find some images generated by the exact same commands but with some modified <code>panderOptions</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">panderOptions</span>(<span class="st">'graph.fontfamily'</span>, <span class="st">&quot;Comic Sans MS&quot;</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.fontsize'</span>, <span class="dv">18</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.fontcolor'</span>, <span class="st">'blue'</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.grid.color'</span>, <span class="st">'blue'</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.axis.angle'</span>, <span class="dv">3</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.boxes'</span>, T)
+<span class="kw">panderOptions</span>(<span class="st">'graph.legend.position'</span>, <span class="st">'top'</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.colors'</span>, <span class="kw">rainbow</span>(<span class="dv">5</span>))
+<span class="kw">panderOptions</span>(<span class="st">'graph.grid'</span>, <span class="ot">FALSE</span>)
+<span class="kw">panderOptions</span>(<span class="st">'graph.symbol'</span>, <span class="dv">22</span>)</code></pre></div>
+<h2 id="histogram-1">Histogram</h2>
+<h3 id="base-r-plot-7">Base R plot</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="lattice-7">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-7">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="barplot-1">Barplot</h2>
+<h3 id="base-r-plot-8">Base R plot</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<p>Yeah, the &quot;Foo bar&quot; label is cropped. We need a custom <code>mar</code> option here:</p>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<p>But wait, we lost the color! Right: unfortunately coloring base R plots is really hackish, <code>pander</code> is adding the <code>col</code> attribute to the calls. If you start to tweak <code>par</code> in a chunk, you should prepare to some unwanted side-effects. Solution:</p>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="lattice-8">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-8">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="points-1">Points</h2>
+<h3 id="base-r-plot-9">Base R plot</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="lattice-9">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-9">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="grouped-plot-1">Grouped plot</h2>
+<h3 id="base-r-plot-10">Base R plot</h3>
+<p>I have no idea how to do that besides manually adding <code>points</code>.</p>
+<h3 id="lattice-10">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-10">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="facets-1">Facets</h2>
+<h3 id="base-r-plot-11">Base R plot</h3>
+<p>I have no idea how to do that besides <code>par(mfrow=c(foo, bar))</code>.</p>
+<h3 id="lattice-11">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-11">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="boxplot-1">Boxplot</h2>
+<h3 id="base-r-plot-12">Base R plot</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="lattice-12">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-12">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h2 id="lines-1">Lines</h2>
+<h3 id="base-r-plot-13">Base R plot</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="lattice-13">lattice</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<h3 id="ggplot2-13">ggplot2</h3>
+<div class="figure">
+<img src="data:image/png;base64," alt />
+
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Applying default formatting to image is somehow compromised (the result could differ from what you specified in <code>panderOptions</code>). Hints: printing <code>lattice</code>/<code>ggplot2</code> is not needed and tweaking <code>base</code> plots with <code>par</code> might have some side-effects!<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Applying default formatting to image is somehow compromised (the result could differ from what you specified in <code>panderOptions</code>). Hints: printing <code>lattice</code>/<code>ggplot2</code> is not needed and tweaking <code>base</code> plots with <code>par</code> might have some side-effects!<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Applying default formatting to image is somehow compromised (the result could differ from what you specified in <code>panderOptions</code>). Hints: printing <code>lattice</code>/<code>ggplot2</code> is not needed and tweaking <code>base</code> plots with <code>par</code> might have some side-effects!<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Applying default formatting to image is somehow compromised (the result could differ from what you specified in <code>panderOptions</code>). Hints: printing <code>lattice</code>/<code>ggplot2</code> is not needed and tweaking <code>base</code> plots with <code>par</code> might have some side-effects!<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Applying default formatting to image is somehow compromised (the result could differ from what you specified in <code>panderOptions</code>). Hints: printing <code>lattice</code>/<code>ggplot2</code> is not needed and tweaking <code>base</code> plots with <code>par</code> might have some side-effects!<a href="#fnref5">↩</a></p></li>
+</ol>
+</div>
+<p align="center">
+  Design: <a href="http://rapporter.net"><i>Rapporter</i> Team</a> © 2011-2014 | Backend: <a href="https://github.com/rapporter/pander">pander</a> | License: <a href="http://www.gnu.org/licenses/agpl.html" target="_blank">AGPL3</a> or <a href="http://opensource.org/licenses/OSL-3.0" target="_blank">OSL</a> | Styled with <a href="http://www.getskeleton.com/" target="_blank">skeleton</a>
+</p>
+</body>
+</html>

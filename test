@@ -4,10 +4,11 @@ library(pander);
 detach('package:pander', unload = TRUE);
 library(pander)
 evalsOptions('graph.unify', TRUE)
+evalsOptions('graph.output', 'jpeg')
 ## hardcoded plot name for the README
 evalsOptions('graph.name', 'plot-1')
 ## brew the file to another directory (dedicated to the gh-pages branch)
-Pandoc.brew('inst/README.brew', output = 'index', convert = 'html', open = FALSE, portable.html = FALSE)
+Pandoc.brew('../pander/inst/README.brew', output = 'index', convert = 'html', open = FALSE, portable.html = FALSE)
 ## fix img and js/css absolute path
 t <- readLines('index.html')
 t <- gsub('/usr/lib/R/library/pander/includes/', '', t, fixed = TRUE)
@@ -20,10 +21,11 @@ file.remove(list.files('plots/', full.names = TRUE))
 examples <- gsub("(.*)\\.brew$", "\\1", list.files("../pander/inst/examples/"))
 
 for (example in examples) {
-    brew_path <- file.path("inst/examples/", paste(example, ".brew", sep=""))
+    brew_path <- file.path("inst/examples", paste(example, ".brew", sep=""))
     Pandoc.brew(brew_path, output = example, convert = 'html', open = FALSE)
-    for (format in c('pdf', 'docx', 'odt')) {
-        tryCatch(Pandoc.convert(example, format = format, open = FALSE), error = function(x) print(x))
+    for (format in c('odt')) {
+        try(Pandoc.convert(example, format = format, open = FALSE), silent = T)
     }
     file.rename(example, paste(example, ".md", sep=""))
 }
+
