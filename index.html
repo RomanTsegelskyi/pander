@@ -29,28 +29,28 @@ code > span.er { color: #ff0000; font-weight: bold; }
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="stylesheets/base.css" />
-<link rel="stylesheet" href="stylesheets/skeleton.css" />
-<link rel="stylesheet" href="stylesheets/layout.css" />
-<link rel="stylesheet" href="stylesheets/slimbox2.css" />
-<link rel="stylesheet" href="stylesheets/custom.css" />
-<link rel="stylesheet" href="stylesheets/caption.css"/>
+<link rel="stylesheet" href="/usr/local/lib/R/site-library/pander/includes//stylesheets/base.css" />
+<link rel="stylesheet" href="/usr/local/lib/R/site-library/pander/includes//stylesheets/skeleton.css" />
+<link rel="stylesheet" href="/usr/local/lib/R/site-library/pander/includes//stylesheets/layout.css" />
+<link rel="stylesheet" href="/usr/local/lib/R/site-library/pander/includes//stylesheets/slimbox2.css" />
+<link rel="stylesheet" href="/usr/local/lib/R/site-library/pander/includes//stylesheets/custom.css" />
+<link rel="stylesheet" href="/usr/local/lib/R/site-library/pander/includes//stylesheets/caption.css"/>
 
-<link rel="shortcut icon" href="images/favicon.gif" />
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+<link rel="shortcut icon" href="/usr/local/lib/R/site-library/pander/includes//images/favicon.gif" />
+<link rel="apple-touch-icon" href="/usr/local/lib/R/site-library/pander/includes//images/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/usr/local/lib/R/site-library/pander/includes//images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/usr/local/lib/R/site-library/pander/includes//images/apple-touch-icon-114x114.png" />
 
-<script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="javascripts/custom.js"></script>
-<script type="text/javascript" src="javascripts/slimbox2.js"></script>
+<script type="text/javascript" src="/usr/local/lib/R/site-library/pander/includes//javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/usr/local/lib/R/site-library/pander/includes//javascripts/custom.js"></script>
+<script type="text/javascript" src="/usr/local/lib/R/site-library/pander/includes//javascripts/slimbox2.js"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
   });
 </script>
 <script type="text/javascript" src="http://cdn.rapporter.net/mathjax/2.1/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/javascript" src="javascripts/jcaption.min.js" /></script>
+<script type="text/javascript" src="/usr/local/lib/R/site-library/pander/includes//javascripts/jcaption.min.js" /></script>
 </head>
 <body>
 <h1 id="pander-an-r-pandoc-writer"><a href="https://github.com/Rapporter/pander">pander: An R Pandoc Writer</a></h1>
@@ -134,9 +134,9 @@ II. Second element
 <pre><code>-------------------------------------------
       &amp;nbsp;         mpg   cyl   disp   hp 
 ------------------- ----- ----- ------ ----
-   **Mazda RX4**     21     6    160   110 
+   **Mazda RX4**    21.0    6    160   110 
 
- **Mazda RX4 Wag**   21     6    160   110 
+ **Mazda RX4 Wag**  21.0    6    160   110 
 
   **Datsun 710**    22.8    4    108    93 
 -------------------------------------------
@@ -235,17 +235,16 @@ Table: Hello caption!
 &gt; emphasize.strong.cells(which(t &gt; 20, arr.ind = TRUE))
 &gt; pandoc.table(t)
 
--------------------------------------------------------------
-      &amp;nbsp;          mpg     cyl    disp       hp      drat 
-------------------- -------- ----- --------- --------- ------
-   **Mazda RX4**    ***21***  *6*  ***160*** ***110*** *3.9* 
+---------------------------------------------------------------
+      &amp;nbsp;           mpg      cyl    disp       hp      drat 
+------------------- ---------- ----- --------- --------- ------
+   **Mazda RX4**    ***21.0***  *6*  ***160*** ***110*** *3.90*
 
- **Mazda RX4 Wag**  ***21***   6    **160**   **110**   3.9  
+ **Mazda RX4 Wag**  ***21.0***   6    **160**   **110**   3.90 
 
-  **Datsun 710**    ***21***   4    **108**   **93**    3.85 
--------------------------------------------------------------
-
- **WARNING**^[provided 3 variables to replace 1 variables]</code></pre>
+  **Datsun 710**    ***22.8***   4    **108**   **93**    3.85 
+---------------------------------------------------------------
+</code></pre>
 <p>For more examples, please see our &quot;<a href="http://blog.rapporter.net/2013/04/hihglight-cells-in-markdown-tables.html">Highlight cells in markdown tables</a>&quot; blog post.</p>
 <h2 id="cell-alignment">Cell alignment</h2>
 <p>You can specify the alignment of the cells (left, right or center/centre) in a table directly by setting the <code>justify</code> parameter:</p>
@@ -256,7 +255,7 @@ Table: Hello caption!
 -------------- ------------- --------------
            5.1      3.5      1.4           
 
-           4.9       3       1.4           
+           4.9      3.0      1.4           
 -------------------------------------------
 </code></pre>
 <p>Or pre-define the alignment for (all future) <code>pandoc.table</code> or the <code>pander</code> <a href="#generic-pander-method">S3 generic method</a> by a helper function:</p>
@@ -283,7 +282,7 @@ Sepal.Length   Sepal.Width     Petal.Length
 -------------- ------------- --------------
 5.1            3.5                      1.4
 
-4.9            3                        1.4
+4.9            3.0                      1.4
 -------------------------------------------
 </code></pre>
 <h2 id="table-and-cell-width">Table and cell width</h2>
@@ -293,7 +292,7 @@ Sepal.Length   Sepal.Width     Petal.Length
 +---------------------+-------+-------+--------+------+--------+-------+
 |       &amp;nbsp;        |  mpg  |  cyl  |  disp  |  hp  |  drat  |  wt   |
 +=====================+=======+=======+========+======+========+=======+
-|    **Mazda RX4**    |  21   |   6   |  160   | 110  |  3.9   | 2.62  |
+|    **Mazda RX4**    |  21   |   6   |  160   | 110  |  3.9   | 2.620 |
 +---------------------+-------+-------+--------+------+--------+-------+
 |  **Mazda RX4 Wag**  |  21   |   6   |  160   | 110  |  3.9   | 2.875 |
 +---------------------+-------+-------+--------+------+--------+-------+
@@ -417,23 +416,23 @@ foo-
 
   * **residuals**:
 
-    ----------------------------
-    &amp;nbsp;    3      4      5
-    ------- ------ ------ ------
-     **0**  2.042  -1.171 -1.723
+    --------------------------------------------------
+    &amp;nbsp;    3            4                 5
+    ------- ------ ----------------- -----------------
+     **0**  2.042  -1.17073226447712 -1.72300609401128
 
-     **1**  -2.469 1.415  2.083
-    ----------------------------
+     **1**  -2.469 1.41534629268074  2.08301279585419
+    --------------------------------------------------
 
   * **stdres**:
 
-    ----------------------------
-    &amp;nbsp;    3      4      5
-    ------- ------ ------ ------
-     **0**  4.395  -2.323 -2.943
+    -------------------------------------------------
+    &amp;nbsp;    3            4                5
+    ------- ------ ----------------- ----------------
+     **0**  4.395  -2.32338345119108 -2.9429523715087
 
-     **1**  -4.395 2.323  2.943
-    ----------------------------
+     **1**  -4.395 2.32338345119108  2.9429523715087
+    -------------------------------------------------
 
 &lt;!-- end of list --&gt;
 </code></pre>
@@ -441,11 +440,11 @@ foo-
 <p>But the output of different <strong>statistical methods</strong> are tried to be prettyfied. Some the above call normally returns like:</p>
 <pre class="rout"><code>&gt; pander(chisq.test(table(mtcars$am, mtcars$gear)))
 
----------------------------------------
- Test statistic   df       P value     
----------------- ---- -----------------
-     20.94        2   _2.831e-05_ * * *
----------------------------------------
+-------------------------------
+ Test statistic   df   P value 
+---------------- ---- ---------
+     20.94        2     * * *  
+-------------------------------
 
 Table: Pearson&#39;s Chi-squared test: `table(mtcars$am, mtcars$gear)`
 
@@ -456,7 +455,7 @@ Table: Pearson&#39;s Chi-squared test: `table(mtcars$am, mtcars$gear)`
 ---------------------------------------------------------
  Test statistic   df    P value   Alternative hypothesis 
 ---------------- ----- --------- ------------------------
-     -1.861      17.78 _0.07939_        two.sided        
+     -1.861      17.78                  two.sided        
 ---------------------------------------------------------
 
 Table: Welch Two Sample t-test: `extra` by `group`
@@ -468,19 +467,19 @@ Table: Welch Two Sample t-test: `extra` by `group`
 &gt; m &lt;- glm(counts ~ outcome + treatment, family = poisson())
 &gt; pander(m)
 
---------------------------------------------------------------
-     &amp;nbsp;        Estimate   Std. Error   z value   Pr(&gt;|z|) 
------------------ ---------- ------------ --------- ----------
-  **outcome2**     -0.4543      0.2022     -2.247    0.02465  
+---------------------------------------------------------------
+     &amp;nbsp;        Estimate   Std. Error   z value    Pr(&gt;|z|) 
+----------------- ---------- ------------ ---------- ----------
+  **outcome2**    -4.543e-01    0.2022    -2.247e+00 2.465e-02 
 
-  **outcome3**      -0.293      0.1927      -1.52     0.1285  
+  **outcome3**    -2.930e-01    0.1927    -1.520e+00 1.285e-01 
 
- **treatment2**   1.338e-15      0.2      6.69e-15      1     
+ **treatment2**   1.338e-15     0.2000    6.690e-15  1.000e+00 
 
- **treatment3**   1.421e-15      0.2      7.105e-15     1     
+ **treatment3**   1.421e-15     0.2000    7.105e-15  1.000e+00 
 
- **(Intercept)**    3.045       0.1709      17.81   5.427e-71 
---------------------------------------------------------------
+ **(Intercept)**  3.045e+00     0.1709    1.781e+01  5.427e-71 
+---------------------------------------------------------------
 
 Table: Fitting generalized (poisson/log) linear model: counts ~ outcome + treatment
 
@@ -489,9 +488,9 @@ Table: Fitting generalized (poisson/log) linear model: counts ~ outcome + treatm
 --------------------------------------------------------
     &amp;nbsp;       Df   Deviance   Resid. Df   Resid. Dev 
 --------------- ---- ---------- ----------- ------------
-   **NULL**      NA      NA          8         10.58    
+   **NULL**      NA      NA          8         10.581   
 
-  **outcome**    2     5.452         6         5.129    
+  **outcome**    2   5.452e+00       6         5.129    
 
  **treatment**   2   2.665e-15       4         5.129    
 --------------------------------------------------------
@@ -503,11 +502,11 @@ Table: Analysis of Deviance Table
 -----------------------------------------------------------
     &amp;nbsp;       Df   Sum Sq    Mean Sq   F value   Pr(&gt;F) 
 --------------- ---- --------- --------- --------- --------
-  **outcome**    2     92.67     46.33     2.224    0.2242 
+  **outcome**    2   9.267e+01 4.633e+01 2.224e+00  0.2242 
 
- **treatment**   2   8.382e-31 4.191e-31 2.012e-32    1    
+ **treatment**   2   8.382e-31 4.191e-31 2.012e-32  1.0000 
 
- **Residuals**   4     83.33     20.83      NA        NA   
+ **Residuals**   4   8.333e+01 2.083e+01    NA        NA   
 -----------------------------------------------------------
 
 Table: Analysis of Variance Model
@@ -517,13 +516,13 @@ Table: Analysis of Variance Model
 -------------------------------------------------
     &amp;nbsp;       PC1     PC2      PC3      PC4   
 -------------- ------- -------- -------- --------
-  **Murder**   0.0417  -0.04482 0.07989  -0.9949 
+  **Murder**   0.04170 -0.04482 0.07989  -0.99492
 
- **Assault**   0.9952  -0.05876 -0.06757 0.03894 
+ **Assault**   0.99522 -0.05876 -0.06757 0.03894 
 
- **UrbanPop**  0.04634  0.9769  -0.2005  -0.05817
+ **UrbanPop**  0.04634 0.97686  -0.20055 -0.05817
 
-   **Rape**    0.07516  0.2007   0.9741  0.07233 
+   **Rape**    0.07516 0.20072  0.97408  0.07233 
 -------------------------------------------------
 
 Table: Principal Components Analysis
@@ -533,17 +532,17 @@ Table: Principal Components Analysis
 --------------------------------------------
    &amp;nbsp;      Coordinates   Density values 
 ------------- ------------- ----------------
-  **Min.**       -32.12          5e-06      
+  **Min.**       -32.12        0.0000050    
 
  **1st Qu.**      80.69        0.0004068    
 
- **Median**       193.5         0.001665    
+ **Median**      193.50        0.0016650    
 
-  **Mean**        193.5         0.002214    
+  **Mean**       193.50        0.0022140    
 
- **3rd Qu.**      306.3         0.00409     
+ **3rd Qu.**     306.30        0.0040900    
 
-  **Max.**        419.1         0.006051    
+  **Max.**       419.10        0.0060510    
 --------------------------------------------
 
 Table: Kernel density of *mtcars$hp* (bandwidth: 28.04104)
@@ -555,17 +554,17 @@ Table: Kernel density of *mtcars$hp* (bandwidth: 28.04104)
 --------------------------------------------
    &amp;nbsp;      Coordinates   Density values 
 ------------- ------------- ----------------
-  **Min.**       -32.12            0        
+  **Min.**       -32.12           0.00      
 
- **1st Qu.**      80.69            0        
+ **1st Qu.**      80.69           0.00      
 
- **Median**       193.5            0        
+ **Median**      193.50           0.00      
 
-  **Mean**        193.5            0        
+  **Mean**       193.50           0.00      
 
- **3rd Qu.**      306.3            0        
+ **3rd Qu.**     306.30           0.00      
 
-  **Max.**        419.1           0.01      
+  **Max.**       419.10           0.01      
 --------------------------------------------
 
 Table: Kernel density of *mtcars$hp* (bandwidth: 28.04104)
@@ -773,7 +772,6 @@ attr(,&quot;class&quot;)
 <p>So instead of a captured R object (which would be <code>NULL</code> in this situation by the way), we get the path of the image where the plot was saved:</p>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/Rapporter/pander/gh-pages/plots/graphs-1.png" />
-
 </div>
 <p>Well, this is not a standard histogram usually returned by the <code>hist</code> function, right? As mentioned before, <code>evals</code> have some extra features like applying the user defined theme on various plots automatically. Please see the <code>graphs.brew</code> example <a href="#examples">above</a> for further details, or check the related <a href="#evals-options">global options</a>. If you do not like this feature, simply add <code>evalsOptions('graph.unify</code>, FALSE)<code>to your</code>.Rprofile`.</p>
 <p>Further features are described in the <a href="http://www.rdocumentation.org/packages/pander/functions/evals">technical docs</a>, and now I'll only give a brief introduction to another important feature of <code>evals</code>.</p>
@@ -901,6 +899,7 @@ evals(&#39;mean(xx)&#39;)</code></pre>
 <li><code>graph.env</code>: save the environments in which plots were generated to distinct files (based on <code>graph.name</code>) with <code>env</code> extension?</li>
 <li><code>graph.recordplot</code>: save the plot via <code>recordPlot</code> to distinct files (based on <code>graph.name</code>) with <code>recodplot</code> extension?</li>
 <li><code>graph.RDS</code> save the raw R object returned (usually with <code>lattice</code> or <code>ggplot2</code>) while generating the plots to distinct files (based on <code>graph.name</code>) with <code>RDS</code> extension?</li>
+<li><code>log</code>: <code>NULL</code> or an optionally passed <em>logger name</em> from <code>futile.logger</code> to record all info, trace, debug and error messages.</li>
 </ul>
 <h1 id="difference-from-other-rendering-packages">Difference from other rendering packages</h1>
 <p>How does <code>pander</code> differ from Sweave, brew, knitr, R2HTML and the other tools of literate programming? First of all <code>pander</code> can be used as a helper with any other literate programming solution, so <strong>you can call <code>pander</code> inside of <code>knitr</code> chunks</strong>.</p>
@@ -927,7 +926,6 @@ evals(&#39;mean(xx)&#39;)</code></pre>
 <p>To use this small lib, just type: <code>M-x pander-mode</code> on any document. It might be useful to add a hook to <code>markdown-mode</code> if you find this useful.</p>
 <div class="figure">
 <img src="https://cruel-carlota.gopagoda.com/9dfac0c1da37bd83d1848289630631fd" title="githalytics.com" />
-
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -939,8 +937,6 @@ evals(&#39;mean(xx)&#39;)</code></pre>
     });
 </script>
 <p><a href="https://github.com/Rapporter/pander"><img style="position: fixed; top: -5px; right: -5px; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a></p>
-<hr />
-<p>This report was generated with <a href="http://www.r-project.org/">R</a> (3.1.2) and <a href="https://github.com/rapporter/pander">pander</a> (0.5.2) in 1.746 sec on x86_64-unknown-linux-gnu platform.</p>
 <p align="center">
   Design: <a href="http://rapporter.net"><i>Rapporter</i> Team</a> &copy; 2011-2014 | Backend: <a href="https://github.com/rapporter/pander">pander</a> | License: <a href="http://www.gnu.org/licenses/agpl.html" target="_blank">AGPL3</a> or <a href="http://opensource.org/licenses/OSL-3.0" target="_blank">OSL</a> | Styled with <a href="http://www.getskeleton.com/" target="_blank">skeleton</a>
 </p>
