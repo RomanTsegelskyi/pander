@@ -38,43 +38,43 @@ Not touching the above ones, let us check out how different plots look like by c
 
 ### Base R plot
 
-![](./plots/graphs-41.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
+![](./plots/graphs-81.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
 
 ### lattice
 
-![](./plots/graphs-42.png)
+![](./plots/graphs-82.png)
 
 ### ggplot2
 
-![](./plots/graphs-43.png)
+![](./plots/graphs-83.png)
 
 ## Barplot
 
 ### Base R plot
 
-![](./plots/graphs-44.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
+![](./plots/graphs-84.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
 
 ### lattice
 
-![](./plots/graphs-45.png)
+![](./plots/graphs-85.png)
 
 ### ggplot2
 
-![](./plots/graphs-46.png)
+![](./plots/graphs-86.png)
 
 ## Points
 
 ### Base R plot
 
-![](./plots/graphs-47.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
+![](./plots/graphs-87.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
 
 ### lattice
 
-![](./plots/graphs-48.png)
+![](./plots/graphs-88.png)
 
 ### ggplot2
 
-![](./plots/graphs-49.png)
+![](./plots/graphs-89.png)
 
 ## Grouped plot
 
@@ -84,11 +84,11 @@ I have no idea how to do that besides manually adding `points`.
 
 ### lattice
 
-![](./plots/graphs-50.png)
+![](./plots/graphs-90.png)
 
 ### ggplot2
 
-![](./plots/graphs-51.png)
+![](./plots/graphs-91.png)
 
 ## Facets
 
@@ -98,39 +98,39 @@ I have no idea how to do that besides `par(mfrow=c(foo, bar))`.
 
 ### lattice
 
-![](./plots/graphs-52.png)
+![](./plots/graphs-92.png)
 
 ### ggplot2
 
-![](./plots/graphs-53.png)
+![](./plots/graphs-93.png)
 
 ## Boxplot
 
 ### Base R plot
 
-![](./plots/graphs-54.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
+![](./plots/graphs-94.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
 
 ### lattice
 
-![](./plots/graphs-55.png)
+![](./plots/graphs-95.png)
 
 ### ggplot2
 
-![](./plots/graphs-56.png)
+![](./plots/graphs-96.png)
 
 ## Lines
 
 ### Base R plot
 
-![](./plots/graphs-57.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
+![](./plots/graphs-97.png) **WARNING**^[Applying default formatting to image is somehow compromised (the result could differ from what you specified in `panderOptions`). Hints: printing `lattice`/`ggplot2` is not needed and tweaking `base` plots with `par` might have some side-effects!]
 
 ### lattice
 
-![](./plots/graphs-58.png)
+![](./plots/graphs-98.png)
 
 ### ggplot2
 
-![](./plots/graphs-59.png)
+![](./plots/graphs-99.png)
 
 # Custom options
 
@@ -153,51 +153,51 @@ panderOptions('graph.symbol', 22)
 
 ### Base R plot
 
-![](./plots/graphs-60.png)
+![](./plots/graphs-100.png)
 
 ### lattice
 
-![](./plots/graphs-61.png)
+![](./plots/graphs-101.png)
 
 ### ggplot2
 
-![](./plots/graphs-62.png)
+![](./plots/graphs-102.png)
 
 ## Barplot
 
 ### Base R plot
 
-![](./plots/graphs-63.png)
+![](./plots/graphs-103.png)
 
 Yeah, the "Foo bar" label is cropped. We need a custom `mar` option here:
 
-![](./plots/graphs-64.png)
+![](./plots/graphs-104.png)
 
 But wait, we lost the color! Right: unfortunately coloring base R plots is really hackish, `pander` is adding the `col` attribute to the calls. If you start to tweak `par` in a chunk, you should prepare to some unwanted side-effects. Solution:
 
-![](./plots/graphs-65.png)
+![](./plots/graphs-105.png)
 
 ### lattice
 
-![](./plots/graphs-66.png)
+![](./plots/graphs-106.png)
 
 ### ggplot2
 
-![](./plots/graphs-67.png)
+![](./plots/graphs-107.png)
 
 ## Points
 
 ### Base R plot
 
-![](./plots/graphs-68.png)
+![](./plots/graphs-108.png)
 
 ### lattice
 
-![](./plots/graphs-69.png)
+![](./plots/graphs-109.png)
 
 ### ggplot2
 
-![](./plots/graphs-70.png)
+![](./plots/graphs-110.png)
 
 ## Grouped plot
 
@@ -207,11 +207,11 @@ I have no idea how to do that besides manually adding `points`.
 
 ### lattice
 
-![](./plots/graphs-71.png)
+![](./plots/graphs-111.png)
 
 ### ggplot2
 
-![](./plots/graphs-72.png)
+![](./plots/graphs-112.png)
 
 ## Facets
 
@@ -221,38 +221,38 @@ I have no idea how to do that besides `par(mfrow=c(foo, bar))`.
 
 ### lattice
 
-![](./plots/graphs-73.png)
+![](./plots/graphs-113.png)
 
 ### ggplot2
 
-![](./plots/graphs-74.png)
+![](./plots/graphs-114.png)
 
 ## Boxplot
 
 ### Base R plot
 
-![](./plots/graphs-75.png)
+![](./plots/graphs-115.png)
 
 ### lattice
 
-![](./plots/graphs-76.png)
+![](./plots/graphs-116.png)
 
 ### ggplot2
 
-![](./plots/graphs-77.png)
+![](./plots/graphs-117.png)
 
 ## Lines
 
 ### Base R plot
 
-![](./plots/graphs-78.png)
+![](./plots/graphs-118.png)
 
 ### lattice
 
-![](./plots/graphs-79.png)
+![](./plots/graphs-119.png)
 
 ### ggplot2
 
-![](./plots/graphs-80.png)
+![](./plots/graphs-120.png)
 
  
