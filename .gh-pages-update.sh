@@ -14,17 +14,11 @@ git config user.email "travis"
 git checkout master
 CHANGED_FILES=`git diff-tree --no-commit-id --name-only -r $TRAVIS_COMMIT`
 # check if vignettes were updated
-if [[ $CHANGED_FILES =~ .*\.Rmd.* ]]
-then
-  R -e 'devtools::build_vignettes()'
-  git add inst\doc
-fi
+R -e 'devtools::build_vignettes()'
+git add inst\doc
 # check if readme was update
-if [[ $CHANGED_FILES =~ .*README\.brew.* ]]
-then
-  R -f ../.brewer.R
-  git add README.md
-fi
+R -f ../.brewer.R
+git add README.md
 git commit -m "Update by travis after $TRAVIS_COMMIT"
 git push origin master
 git stash
