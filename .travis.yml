@@ -17,4 +17,4 @@ script:
 after_success:
 - Rscript -e 'lintr::lint_package()'
 - Rscript -e 'covr::codecov()'
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash .gh-pages-update.sh
+- bash .gh-pages-update.sh
