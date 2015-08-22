@@ -25,6 +25,8 @@ then
   R -f ../.brewer.R
   git add README.md
 fi
+set
+exit;
 git commit -m "Update by travis after $TRAVIS_COMMIT"
 git push origin master
 git stash
