@@ -9,7 +9,7 @@ env:
 
 before_install:
 - docker pull rocker/hadleyverse
-- docker run --rm -ti rocker/hadleyverse
+- docker run --rm rocker/hadleyverse
 
 script:
 - make install
